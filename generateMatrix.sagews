@@ -5,8 +5,9 @@ def main():
     pocetHran = 36;
     m=12;
     print(k)
-    generateCageGrafAndAdjancyMatrix(k,m,pocetHran);
+    generateCageGrafAndAdjacencyMatrix(k,m,pocetHran);
 
+# generovanie nahodneho vektora - prvy riadok incidencnej matice
 def generateVector(k,pocetHran):
     ones = [];
     zeros = []
@@ -18,12 +19,12 @@ def generateVector(k,pocetHran):
     numpy.random.shuffle(resultVector);
     return resultVector;
 
-# no more than 2 HW in column
+# kontrola suctu vahy v stlpci, nesmie presiahnut 2
 def checkAllowedSumInColumns(matrixAsList):
     result = 1;
-    potentionalAdjancyMatrix = Matrix(matrixAsList);
-    for i in range(len(potentionalAdjancyMatrix.row(0))):
-        if sum(potentionalAdjancyMatrix.column(i)) > 2:
+    potentionalAdjacencyMatrix = Matrix(matrixAsList);
+    for i in range(len(potentionalAdjacencyMatrix.row(0))):
+        if sum(potentionalAdjacencyMatrix.column(i)) > 2:
             result = 0;
         else:
             result = result * 1;
@@ -32,7 +33,8 @@ def checkAllowedSumInColumns(matrixAsList):
     else:
         return False;
 
-def generateAdjancyMatrixWithDuplicities(k,m,pocetHran):
+# vygenerovanie incidencnej matice, ktora obsahuje aj duplicitne hrany
+def generateAdjacencyMatrixWithDuplicities(k,m,pocetHran):
     vectorV = generateVector(k,pocetHran);
     matrixAsList = [];
     matrixAsList.append(list(vectorV));
@@ -41,38 +43,38 @@ def generateAdjancyMatrixWithDuplicities(k,m,pocetHran):
         matrixAsList.append(list(vectorV));
         if checkAllowedSumInColumns(matrixAsList) == False and len(matrixAsList) > 0:
             matrixAsList.pop();
-    potentionalAdjancyMatrix = Matrix(matrixAsList);
+    potentionalAdjacencyMatrix = Matrix(matrixAsList);
     vectorV = vector(list(zero_vector(SR, pocetHran)));
     count = 0;
     for i in range(pocetHran):
-        if sum(potentionalAdjancyMatrix.column(i)) == 2:
+        if sum(potentionalAdjacencyMatrix.column(i)) == 2:
             vectorV[i] = 0;
         else:
-            if sum(potentionalAdjancyMatrix.column(i)) == 0 and count < k:
+            if sum(potentionalAdjacencyMatrix.column(i)) == 0 and count < k:
                 vectorV[i] = 1;
                 count += 1;
 
     for i in range(pocetHran-1, 0, -1):
-        if sum(potentionalAdjancyMatrix.column(i)) == 1 and count < k:
+        if sum(potentionalAdjacencyMatrix.column(i)) == 1 and count < k:
             vectorV[i] = 1;
             count += 1;
     matrixAsList.append(list(vectorV));
 
-    potentionalAdjancyMatrix = Matrix(matrixAsList);
+    potentionalAdjacencyMatrix = Matrix(matrixAsList);
     vectorV = vector(list(zero_vector(SR, pocetHran)));
     for i in range(pocetHran):
-        if sum(potentionalAdjancyMatrix.column(i)) == 2:
+        if sum(potentionalAdjacencyMatrix.column(i)) == 2:
             vectorV[i] = 0;
         else:
             vectorV[i] = 1;
     matrixAsList.append(list(vectorV));
     return Matrix(matrixAsList);
 
-# generate adjancy matrix without last 2 edges
-def getIncompleteAdjancyMatrixWithoutDuplicity(k,m,pocetHran,graph):
+# Odstranenie duplicity pre incidencnu maticu
+def getIncompleteAdjacencyMatrixWithoutDuplicity(k,m,pocetHran,graph):
     while len(list(set(graph.edges()))) != pocetHran:
-        adjancyMatrix = generateAdjancyMatrixWithDuplicities(k,m,pocetHran);
-        graph = Graph(adjancyMatrix);
+        adjacencyMatrix = generateAdjacencyMatrixWithDuplicities(k,m,pocetHran);
+        graph = Graph(adjacencyMatrix);
         if (len(list(set(graph.edges()))) == pocetHran-2):
             break;
     resultEdges = list(set(graph.edges()));
@@ -80,7 +82,7 @@ def getIncompleteAdjancyMatrixWithoutDuplicity(k,m,pocetHran,graph):
     resultGraph.add_edges(resultEdges);
     return resultGraph.incidence_matrix();
 
-# fill last 2 edges
+# doplnenie matice dopocitanim chybajucich hran
 def fillInIncompleteMatrix(k,matrix):
     listV = [];
     resultMatrixAsList = [];
@@ -100,12 +102,13 @@ def fillInIncompleteMatrix(k,matrix):
         resultMatrixAsList.append(listV);
     return Matrix(resultMatrixAsList);
 
-def generateCageGrafAndAdjancyMatrix(k,m,pocetHran):
+# spracovanie vyslednej incidencnej matice a vyslednych dat
+def generateCageGrafAndAdjacencyMatrix(k,m,pocetHran):
     dosiahnutyPocetHran = 0;
     while dosiahnutyPocetHran != pocetHran:
-        adjancyMatrix = generateAdjancyMatrixWithDuplicities(k,m,pocetHran);
-        graph = Graph(adjancyMatrix);
-        matrix = getIncompleteAdjancyMatrixWithoutDuplicity(k,m,pocetHran,graph);
+        adjacencyMatrix = generateAdjacencyMatrixWithDuplicities(k,m,pocetHran);
+        graph = Graph(adjacencyMatrix);
+        matrix = getIncompleteAdjacencyMatrixWithoutDuplicity(k,m,pocetHran,graph);
 
         adjacencyMatrix = fillInIncompleteMatrix(k,matrix);
         resultGraph = Graph(adjacencyMatrix);
@@ -114,11 +117,44 @@ def generateCageGrafAndAdjancyMatrix(k,m,pocetHran):
             break;
 
     print(adjacencyMatrix);
-    show(resultGraph);
-    print(dosiahnutyPocetHran);
+    getAndshowCageInformations(resultGraph);
+
+# ziska vsetky cykly prechadzajúce vrcholom 0
+def getCycles(graph):
+    listOfGirths = [];
+    listsOfGirthVertices = graph.minimum_cycle_basis(by_weight=False);
+    for listOfGirthVertices in listsOfGirthVertices:
+        cycleGraph = graph.subgraph(listOfGirthVertices);
+        listOfGirths.append(cycleGraph.cycle_basis());
+    return listOfGirths;
+
+# realne data na zaklade vypooctov z klietky
+def getAndshowCageInformations(graph):
+    cycles = [];
+    graph.show(figsize=10);
+    print(' \n')
+    print('Cykly formujúce klietku: ');
+    cycles = getCycles(graph);
+    print(cycles);
+    print(' \n')
+    print('Vrcholy klietky: ');
+    print(len(graph.vertices()));
+    print(graph.vertices());
+    print(' \n')
+    print('Hrany klietky: ');
+    print(len(graph.edges(labels=False)));
+    print(graph.edges(labels=False));
+    print(' \n')
+    print('Incidencna matica klietky: ');
+    print(graph.incidence_matrix());
+    print(' \n')
+    print('Pocet grup automorfizmov: ');
+    print(len(graph.automorphism_group()));
+    print(' \n')
+    print('Grupy automorfizmov: ');
+    print(graph.automorphism_group().list());
 
 main()
-
 
 
 
