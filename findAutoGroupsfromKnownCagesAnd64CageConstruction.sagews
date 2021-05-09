@@ -76,7 +76,7 @@ def calculateMooreBound(k,g):
 # vypocita potencionalnu minimalnu velkost kodu na zaklade Moorovho ohranicenia (testovacie data)
 def codeSizeByMooreBound(M,k):
     row = M;
-    column = numberOfEdges(M,k);
+    column = numberOfEdgesByMooreBound(M,k);
     size = str(row) + " x " + str(column);
     return size;
 
@@ -85,7 +85,7 @@ def numberOfEdgesByMooreBound(M,k):
     return M * k / 2;
 
 def generate_6_4CageGraph():
-    m = minNumberOfVertices(6,4);
+    m = calculateMooreBound(6,4);
     s =[]
     for i in range(m/2):
         s.append(6);
@@ -172,3 +172,12 @@ def cageVerification(cage,k,g):
         return False;
     return True;
 main()
+
+
+
+
+
+
+
+
+

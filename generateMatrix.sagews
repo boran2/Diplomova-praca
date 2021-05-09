@@ -4,7 +4,6 @@ def main():
     k=6;
     pocetHran = 36;
     m=12;
-    print(k)
     generateCageGrafAndAdjacencyMatrix(k,m,pocetHran);
 
 # generovanie nahodneho vektora - prvy riadok incidencnej matice
@@ -116,45 +115,16 @@ def generateCageGrafAndAdjacencyMatrix(k,m,pocetHran):
         if (dosiahnutyPocetHran == pocetHran):
             break;
 
+
     print(adjacencyMatrix);
-    getAndshowCageInformations(resultGraph);
-
-# ziska vsetky cykly prechadzajúce vrcholom 0
-def getCycles(graph):
-    listOfGirths = [];
-    listsOfGirthVertices = graph.minimum_cycle_basis(by_weight=False);
-    for listOfGirthVertices in listsOfGirthVertices:
-        cycleGraph = graph.subgraph(listOfGirthVertices);
-        listOfGirths.append(cycleGraph.cycle_basis());
-    return listOfGirths;
-
-# realne data na zaklade vypooctov z klietky
-def getAndshowCageInformations(graph):
-    cycles = [];
-    graph.show(figsize=10);
-    print(' \n')
-    print('Cykly formujúce klietku: ');
-    cycles = getCycles(graph);
-    print(cycles);
-    print(' \n')
-    print('Vrcholy klietky: ');
-    print(len(graph.vertices()));
-    print(graph.vertices());
-    print(' \n')
-    print('Hrany klietky: ');
-    print(len(graph.edges(labels=False)));
-    print(graph.edges(labels=False));
-    print(' \n')
-    print('Incidencna matica klietky: ');
-    print(graph.incidence_matrix());
-    print(' \n')
-    print('Pocet grup automorfizmov: ');
-    print(len(graph.automorphism_group()));
-    print(' \n')
-    print('Grupy automorfizmov: ');
-    print(graph.automorphism_group().list());
+    resultGraph.show(figsize=10);
+    print("Pocet hran:");
+    print(len(resultGraph.edges()));
 
 main()
+
+
+
 
 
 
