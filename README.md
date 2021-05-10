@@ -26,12 +26,13 @@ Moorove ohranicenie                                                             
 preskumat moznosti generovania Incidencnych matic a znich by sme chceli dostat klietky
 preskumat vztah medzi incidencnymi maticami, grupami automorfizmov a linearnych kodov LDPC
 
+
 # linky na hlavne 2 zdroje:
 https://digital.library.adelaide.edu.au/dspace/bitstream/2440/45525/8/02whole.pdf
 https://www.combinatorics.org/ojs/index.php/eljc/article/view/DS16
 
 
 
-
+# overleaf: https://www.overleaf.com/read/fdkwtgxntwjs
 
 
