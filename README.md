@@ -1,7 +1,7 @@
 # Diplomova-praca
 Grupy automorfizmov linearnych kodov a linearne kody s predpisanou grupou automorfizmov
 
-CoCalc - .sagew subory je potrebne spustat v tejto online aplikacii
+CoCalc - .sagew subory je potrebne spustat v tejto online aplikacii, treba mat v aplikaci uploadnuty aj priecinok ExoosCages
 https://cocalc.com/projects?session=default
 
 # popis:
