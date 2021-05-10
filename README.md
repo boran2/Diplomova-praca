@@ -1,8 +1,8 @@
 # Diplomova-praca
 Grupy automorfizmov linearnych kodov a linearne kody s predpisanou grupou automorfizmov
 
-CoCalc - .sagew subory je potrebne spustat v tejto online aplikacii, treba mat v aplikaci uploadnuty aj priecinok ExoosCages
-https://cocalc.com/projects?session=default
+CoCalc - .sagew subory je potrebne spustat v tejto online aplikacii, alebo mat nainstalovany Sage
+https://cocalc.com/projects?session=default - link na aplikaciu, potrebna jednoducha registracia a po zadani tokenu tEym4xMQrcpX5Gs5 (vpravo hore v projektoch "project invite token") sa dostavate ku kopiam zdrojovych kodov. Rozkliknutim otvorite a stacite Run.
 
 # popis:
 skumanie Linearnych kodov LDPC, pomocou klietok je ich mozne vygenerovat
