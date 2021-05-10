@@ -18,7 +18,7 @@ Generovanie incidenčných matíc, grúp automorfizmov zo zadaného zoznamu suse
 Generovanie klietky a následne incidenčných matíc, grúp automorfizmov         (findAutoGroupsfromKnownCagesAnd64CageConstruction.sagew - potrebne menit k,g parametre) 
 Experimentálne Generovanie incidenčných matíc                                 (generateMatrix.sagew) 
 
-#testovanie:
+# testovanie:
 findAutoGroupsfromKnownCagesAnd64CageConstruction.sagew - vramci konstrukcie - validacia
 Moorove ohranicenie                                                             (MooreBounds.sagew)
 
