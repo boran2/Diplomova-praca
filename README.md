@@ -13,15 +13,15 @@ Prostredie: CoCalc (http://cocalc.com/) - online aplikácia na spúšťanie Sage
 3. Mal by sa Vám zobraziť projekt s 3 sage súbormi, tie pude potrebné otvoriť a spustiť pomocou tlačidla run nasledovným spôsobom:
 
 ### 1. Generovanie incidenčných matíc, grúp automorfizmov zo zadaných klietok 
-otvoriť findAutoGroupsfromKnownCagesAnd64CageConstruction.sagew - potrebne menit k,g parametre
+otvoriť findAutoGroupsfromKnownCagesAnd64CageConstruction.sagew - potrebné meniť k,g parametre
 podľa nasledovného zoznamu klietok: [[3,5], [3,6], [3,7], [3,8], [3,10], [4,5], [7,5]]
 
 ### 2. Generovanie incidenčných matíc, grúp automorfizmov zo zadaného zoznamu susedností
-otvoriť findAutoGroupsfromKnownCagesAnd64CageConstruction.sagew - potrebne menit k,g parametre
+otvoriť findAutoGroupsfromKnownCagesAnd64CageConstruction.sagew - potrebné meniť k,g parametre
 podľa nasledovného zoznamu klietok: [[3,14], [3,16], [3,17], [3,18], [3,20], [3,23], [3,25], [4,7], [4,9], [4,10], [5,10], [7,7], [7,8], [10,5], [11,5], [12,5], [13,5]]
 
 ### 3. Generovanie klietky a následne incidenčných matíc, grúp automorfizmov
-otvoriť findAutoGroupsfromKnownCagesAnd64CageConstruction.sagew - potrebne nastavit parametre  k=6, g=4
+otvoriť findAutoGroupsfromKnownCagesAnd64CageConstruction.sagew - potrebné nastaviť parametre  k=6, g=4
 
 ### 4. Experimentálne Generovanie incidenčných matíc
 otvoriť generateMatrix.sagew (parametre sú už nastavené, uvažujeme iba existenciu k=6, g=4 klietky)
@@ -34,11 +34,11 @@ LaTex_Diplomova_Praca.pdf
 
 ## testovanie:
 findAutoGroupsfromKnownCagesAnd64CageConstruction.sagew - vrámci konštrukcie - validácia
-Moorove ohranicenie (MooreBounds.sagew)
+Moorove ohraničenie (MooreBounds.sagew)
 
 ## vízie do budúcna:
-preskúmať možnosti generovania Incidenčných matic a z nich by sme chceli dostat klietky
-preskúmat vztah medzi incidencnymi maticami, grupami automorfizmov a linearnych kodov LDPC, dostať sa priamo k LDPC kódom
+preskúmať možnosti generovania Incidenčných matíc a z nich by sme chceli dostat klietky
+preskúmat vzťah medzi incidenčnými maticami, grupami automorfizmov a lineárnych kódov LDPC, dostať sa priamo k LDPC kódom
 
 ##  linky na publikácie:
 https://www.combinatorics.org/ojs/index.php/eljc/article/view/DS16
