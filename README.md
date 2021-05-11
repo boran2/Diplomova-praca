@@ -38,6 +38,7 @@ Moorove ohraničenie (MooreBounds.sagew)
 
 ## vízie do budúcna:
 preskúmať možnosti generovania Incidenčných matíc a z nich by sme chceli dostat klietky
+
 preskúmat vzťah medzi incidenčnými maticami, grupami automorfizmov a lineárnych kódov LDPC, dostať sa priamo k LDPC kódom
 
 ##  linky na publikácie:
