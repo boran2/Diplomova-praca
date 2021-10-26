@@ -2,8 +2,8 @@ import random
 
 def main():
 # ***************vstupne data*****************
-    k = 3;
-    g = 5;
+    k = 6;
+    g = 4;
 # ********************************************
     print(' \n')
     print("Cage("+str(k)+","+str(g)+")\n");
@@ -104,6 +104,16 @@ def getCycles(graph):
         listOfGirths.append(cycleGraph.cycle_basis());
     return listOfGirths;
 
+# vrati kontrolnu maticu linearneho kodu ako incidencnu maticu klietky ziskanu z grafu nad polom Z2
+def getParityCheckMatrix(graph):
+    return matrix(GF(2), graph.incidence_matrix());
+
+# vrati kontrolnu maticu linearneho kodu ako incidencnu maticu klietky ziskanu z grafu nad polom Z2
+def getGeneratorMatrix(H):
+    # vygeneruje lin kod z kontrolnej matice
+    C = codes.from_parity_check_matrix(H);
+    return C.systematic_generator_matrix();
+
 # realne data na zaklade vypooctov z klietky
 def getAndshowCageInformations(graph):
     cycles = [];
@@ -121,7 +131,7 @@ def getAndshowCageInformations(graph):
     print(len(graph.edges(labels=False)));
     print(graph.edges(labels=False));
     print(' \n')
-    print('Incidencna matica klietky: ');
+    print('Incidencna matica klietky, ktorá je zároveň kontrolnou maticou lin. kódu: ');
     print(graph.incidence_matrix());
     print(' \n')
     print('Pocet grup automorfizmov: ');
@@ -129,6 +139,25 @@ def getAndshowCageInformations(graph):
     print(' \n')
     print('Grupy automorfizmov: ');
     print(graph.automorphism_group().list());
+    print(' \n')
+    H = getParityCheckMatrix(graph)
+    C = codes.from_parity_check_matrix(H)
+    print('Lineárny kód vygenerovaný z kontrolnej matice: ');
+    print(C);
+    print(' \n')
+    G = getGeneratorMatrix(H)
+    print('Generujúca matica lineárneho kódu: ');
+    print(G);
+    print(' \n')
+    print('Minimálna vzdialenost v kóde: ');
+    print(C.minimum_distance());
+    print(' \n')
+    print('Overenie vypoctom G * Ht = {nulova matica}: ');
+    print(G);
+    print('x');
+    print(H.transpose());
+    print('=');
+    print(linearCodeVerification(H,G));
 
 # testovacie dáta pre porovnanie na základe Moorovho ohraničenia pre potencionálnu klietku
 def testingcontrollDataForPotentionalCage(k,g):
@@ -171,6 +200,11 @@ def cageVerification(cage,k,g):
     if len(cage.edges()) < minPocetHran or len(cage.incidence_matrix().row(0)) < minPocetHran:
         return False;
     return True;
+
+# overenie G * Ht = 0 //overi spravnost vygenerovanej generacnejmatice ako aj kodu samotneho lin kodu a vrati nulovu stvorcovu maticu
+def linearCodeVerification(H,G):
+    return G * (H.transpose());
+
 main()
 
 
