@@ -33,13 +33,13 @@ otvoriť MooreBounds.sagew (parametre sú už nastavené)
 otvoriť findAutoGroupsfromKnownCagesAnd64CageConstruction.sagew  - vygeneruje pre parametre k a g, ktoré je potrebné nastaviť podľa ľubovôle zo zoznamu klietok, ktoré sme uvažovali v bodoch 1, 2 a 3
 
 
-otvoriť generateParityCheckMatricesFromCages a sledovať ako skript vytvára kontrolné matice v priečinku ParityCheckMatrices vo forme textových súborov
+otvoriť generateParityCheckMatricesFromCages a sledovať ako skript vytvára/updejtuje kontrolné matice v priečinku ParityCheckMatrices vo forme textových súborov
 
 ### 7. Vytváranie Generujúcich matíc lineárneho kódu z kontrolných matíc a ukladanie v textovych suboroch
 otvoriť findAutoGroupsfromKnownCagesAnd64CageConstruction.sagew  - vygeneruje pre parametre k a g, ktoré je potrebné nastaviť podľa ľubovôle zo zoznamu klietok, ktoré sme uvažovali v bodoch 1, 2 a 3; z uvažovanej matice incidencie dostaneme lineárny kód a generujúcu maticu lin. kódu
 
 
-otvoriť generateGeneratorMatricesFromParityCheckMatrices a sledovať ako skript vytvára kontrolné matice v priečinku GeneratorMatrices vo forme textových súborov zo získaných kontrolných matíc, ktoré sme uvažovali v bode 6
+otvoriť generateGeneratorMatricesFromParityCheckMatrices a sledovať ako skript vytvára/updejtuje kontrolné matice v priečinku GeneratorMatrices vo forme textových súborov zo získaných kontrolných matíc, ktoré sme uvažovali v bode 6
 
 ## PDF- verzia:
 LaTex_Diplomova_Praca.pdf
