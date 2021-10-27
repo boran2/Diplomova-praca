@@ -1,9 +1,10 @@
+︠7ea8f36d-cecc-41fd-912c-583289713221s︠
 import random
 
 def main():
 # ***************vstupne data*****************
-    k = 6;
-    g = 4;
+    k = 3;
+    g = 5;
 # ********************************************
     print(' \n')
     print("Cage("+str(k)+","+str(g)+")\n");
@@ -134,12 +135,12 @@ def getAndshowCageInformations(graph):
     print('Incidencna matica klietky, ktorá je zároveň kontrolnou maticou lin. kódu: ');
     print(graph.incidence_matrix());
     print(' \n')
-    print('Pocet grup automorfizmov: ');
+    print('Pocet automorfizmov: ');
     print(len(graph.automorphism_group()));
     print(' \n')
-    print('Grupy automorfizmov: ');
-    print(graph.automorphism_group().list());
-    print(' \n')
+#     print('Grupy automorfizmov: ');
+#     print(graph.automorphism_group().list());
+#     print(' \n')
     H = getParityCheckMatrix(graph)
     C = codes.from_parity_check_matrix(H)
     print('Lineárny kód vygenerovaný z kontrolnej matice: ');
@@ -158,6 +159,15 @@ def getAndshowCageInformations(graph):
     print(H.transpose());
     print('=');
     print(linearCodeVerification(H,G));
+    print(' \n')
+#     print('Generatory grup automorfizmov: ');
+#     print(C.automorphism_group_gens(equivalence="permutational"))
+#     print(' \n')
+    Gr = C.permutation_automorphism_group();
+#     print(Gr);
+#     print(' \n')
+    print('počet automorfizmov z lineárneho kódu: ');
+    print(Gr.order());
 
 # testovacie dáta pre porovnanie na základe Moorovho ohraničenia pre potencionálnu klietku
 def testingcontrollDataForPotentionalCage(k,g):
@@ -206,6 +216,7 @@ def linearCodeVerification(H,G):
     return G * (H.transpose());
 
 main()
+︡cd27f407-5e48-41c7-87ea-0690a79c70ec︡{"stdout":" \n\nCage(3,5)\n\n"}︡{"file":{"filename":"/home/user/.sage/temp/project-376af7c8-9ff4-41d1-b610-f8b2428e9ab4/2403/tmp_z9s0wtqt.svg","show":true,"text":null,"uuid":"f0b3c9de-3188-43b2-bb83-3190bbe04518"},"once":false}︡{"stdout":" \n"}︡{"stdout":"\nCykly formujúce klietku: \n[[[4, 3, 8, 5, 0]], [[1, 2, 3, 4, 0]], [[1, 6, 8, 5, 0]], [[1, 2, 7, 5, 0]], [[4, 9, 7, 5, 0]], [[1, 6, 9, 4, 0]]]\n \n\nVrcholy klietky: \n10\n[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]\n \n\nHrany klietky: \n15\n[(0, 1), (0, 4), (0, 5), (1, 2), (1, 6), (2, 3), (2, 7), (3, 4), (3, 8), (4, 9), (5, 7), (5, 8), (6, 8), (6, 9), (7, 9)]\n \n\nIncidencna matica klietky, ktorá je zároveň kontrolnou maticou lin. kódu: \n[1 1 1 0 0 0 0 0 0 0 0 0 0 0 0]\n[1 0 0 1 1 0 0 0 0 0 0 0 0 0 0]\n[0 0 0 1 0 1 1 0 0 0 0 0 0 0 0]\n[0 0 0 0 0 1 0 1 1 0 0 0 0 0 0]\n[0 1 0 0 0 0 0 1 0 1 0 0 0 0 0]\n[0 0 1 0 0 0 0 0 0 0 1 1 0 0 0]\n[0 0 0 0 1 0 0 0 0 0 0 0 1 1 0]\n[0 0 0 0 0 0 1 0 0 0 1 0 0 0 1]\n[0 0 0 0 0 0 0 0 1 0 0 1 1 0 0]\n[0 0 0 0 0 0 0 0 0 1 0 0 0 1 1]\n \n\nPocet automorfizmov: \n120\n \n\nLineárny kód vygenerovaný z kontrolnej matice: \n[15, 6] linear code over GF(2)\n \n\nGenerujúca matica lineárneho kódu: \n[1 0 1 0 1 0 0 0 0 0 0 1 1 0 0]\n[0 1 1 0 0 0 0 0 0 1 0 1 1 1 0]\n[0 0 0 1 1 0 1 0 0 0 0 0 0 1 1]\n[0 0 0 0 0 1 1 0 1 0 0 0 1 1 1]\n[0 0 0 0 0 0 0 1 1 1 0 0 1 1 0]\n[0 0 0 0 0 0 0 0 0 0 1 1 1 1 1]\n \n\nMinimálna vzdialenost v kóde: \n5"}︡{"stdout":"\n \n\nOverenie vypoctom G * Ht = {nulova matica}: \n[1 0 1 0 1 0 0 0 0 0 0 1 1 0 0]\n[0 1 1 0 0 0 0 0 0 1 0 1 1 1 0]\n[0 0 0 1 1 0 1 0 0 0 0 0 0 1 1]\n[0 0 0 0 0 1 1 0 1 0 0 0 1 1 1]\n[0 0 0 0 0 0 0 1 1 1 0 0 1 1 0]\n[0 0 0 0 0 0 0 0 0 0 1 1 1 1 1]\nx\n[1 1 0 0 0 0 0 0 0 0]\n[1 0 0 0 1 0 0 0 0 0]\n[1 0 0 0 0 1 0 0 0 0]\n[0 1 1 0 0 0 0 0 0 0]\n[0 1 0 0 0 0 1 0 0 0]\n[0 0 1 1 0 0 0 0 0 0]\n[0 0 1 0 0 0 0 1 0 0]\n[0 0 0 1 1 0 0 0 0 0]\n[0 0 0 1 0 0 0 0 1 0]\n[0 0 0 0 1 0 0 0 0 1]\n[0 0 0 0 0 1 0 1 0 0]\n[0 0 0 0 0 1 0 0 1 0]\n[0 0 0 0 0 0 1 0 1 0]\n[0 0 0 0 0 0 1 0 0 1]\n[0 0 0 0 0 0 0 1 0 1]\n=\n[0 0 0 0 0 0 0 0 0 0]\n[0 0 0 0 0 0 0 0 0 0]\n[0 0 0 0 0 0 0 0 0 0]\n[0 0 0 0 0 0 0 0 0 0]\n[0 0 0 0 0 0 0 0 0 0]\n[0 0 0 0 0 0 0 0 0 0]\n \n\npočet automorfizmov z lineárneho kódu: \n120\n \n\nOverenie vypoctom: \nMoorové ohraničenie potencionálnej klietky - pocet vrcholov: M(3,5) = 10\nRozmer uvažovanej minimalnej matice Kodu:  10 x 15\nObvod cyklu v incidencnej matici:  10\nMinimalny pocet hran:  15\n"}︡{"done":true}
 
 
 
