@@ -29,17 +29,17 @@ otvoriť generateMatrix.sagew (parametre sú už nastavené, uvažujeme iba exis
 ### 5. Výpočet samostatného Moorového ohraničenia
 otvoriť MooreBounds.sagew (parametre sú už nastavené)
 
-### 6. Generovanie kontrolných matíc lineárneho kódu a ukladanie v textovych suboroch
-otvoriť findAutoGroupsfromKnownCagesAnd64CageConstruction.sagew  - vygeneruje pre parametre k a g, ktoré je potrebné nastaviť podľa ľubovôle zo zoznamu klietok ktoré sme uvažovali v bodoch 1, 2 a 3
+### 6. Generovanie kontrolných matíc lineárneho kódu a ukladanie v textovych súboroch
+otvoriť findAutoGroupsfromKnownCagesAnd64CageConstruction.sagew  - vygeneruje pre parametre k a g, ktoré je potrebné nastaviť podľa ľubovôle zo zoznamu klietok, ktoré sme uvažovali v bodoch 1, 2 a 3
 
 
-otvoriť generateParityCheckMatricesFromCages a sledovať ako vytvára kontrolné matice v priečinku ParityCheckMatrices vo forme textových súborov
+otvoriť generateParityCheckMatricesFromCages a sledovať ako skript vytvára kontrolné matice v priečinku ParityCheckMatrices vo forme textových súborov
 
 ### 7. Vytváranie Generujúcich matíc lineárneho kódu z kontrolných matíc a ukladanie v textovych suboroch
-otvoriť findAutoGroupsfromKnownCagesAnd64CageConstruction.sagew  - vygeneruje pre parametre k a g ktoré je potrebné nastaviť podľa ľubovôle zo zoznamu klietok, ktoré sme uvažovali vyššie; z uvažovanej matice incidencie dostaneme lineárny kód a generujúcu maticu lin. kódu
+otvoriť findAutoGroupsfromKnownCagesAnd64CageConstruction.sagew  - vygeneruje pre parametre k a g, ktoré je potrebné nastaviť podľa ľubovôle zo zoznamu klietok, ktoré sme uvažovali v bodoch 1, 2 a 3; z uvažovanej matice incidencie dostaneme lineárny kód a generujúcu maticu lin. kódu
 
 
-otvoriť generateGeneratorMatricesFromParityCheckMatrices a sledovať ako vytvára kontrolné matice v priečinku GeneratorMatrices vo forme textových súborov zo získaných kontrolných matíc, ktoré sme uvažovali v bode 6
+otvoriť generateGeneratorMatricesFromParityCheckMatrices a sledovať ako skript vytvára kontrolné matice v priečinku GeneratorMatrices vo forme textových súborov zo získaných kontrolných matíc, ktoré sme uvažovali v bode 6
 
 ## PDF- verzia:
 LaTex_Diplomova_Praca.pdf
