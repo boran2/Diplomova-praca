@@ -1,14 +1,13 @@
-︠f0f317c9-bd0f-4f91-bdec-6a9a4a51084er︠
 import random
 import glob
 import os
 
 def main():
-    filepaths = glob.glob("GeneratorMatrices/*.txt");
+    filepaths = glob.glob('GeneratorMatrices/*.txt');
     sortedfilepaths = sortParityCheckFilesBySize(filepaths);
     for i in range(len(sortedfilepaths) - 1):
         if os.path.getsize(sortedfilepaths[i]) > 0:
-            file = open(sortedfilepaths[i], "r");
+            file = open(sortedfilepaths[i], 'r');
             G = getMatrixFormG(file);
             file.close();
             C = LinearCode(G);
@@ -16,14 +15,15 @@ def main():
             m = getMaxNumberOfCodewords(G)
             d = C.minimum_distance();
             print(getCageName(sortedfilepaths[i]));
-            print("Minimalna vzdialenost v kode: "+ str(d));
-            print("Maximalny pocet kodovych slov: "+ str(m));
-            print("Rozmer matice G: "+ str(G.nrows()) +" x "+str(n));
-            print("Ukazovatel perfektneho kodu: "+ str(perfectCodeParameter(n,m,d)));
-            print("Počet automorfizmov: "+ str(getNumberOfAut(C)));
-            print("\n");
+            print('Minimalna vzdialenost v kode d = '+ str(d));
+            print('Maximalny pocet kodovych slov m = '+ str(m));
+            print('Dlžka lineárneho kódu n = '+ str(n));
+            print('Rozmer matice G = '+ str(G.nrows()) +" x "+str(n));
+            print('Parameter perfektneho kodu p(n,m,d) = '+ str(perfectCodeParameter(n,m,d)));
+            print('Počet automorfizmov AutGroup(C) = '+ str(getNumberOfAut(C)));
+            print('\n');
         else:
-            print("File " + str(sortedfilepaths[i]) +" is Empty! I can not get Generator matrix!\n");
+            print('Súbor ' + str(sortedfilepaths[i]) +' je prázdny! Neviem získať generujúcu maticu!\n');
             continue;
 
 # udava vzdialenost nasho kodu od perfektneho v intervale 0 - 1, kedy 1 je perfektny kod 23,2^12,7 7,2^4,3
@@ -61,16 +61,16 @@ def getMatrixFormG(file):
     return matrix(GF(2),H);
 
 def getCageName(filepath):
-    filepath = filepath.replace("GeneratorMatrices/G_","");
-    filepath = filepath.replace("cage_","Cage(");
-    filepath = filepath.replace("_",",");
-    filepath = filepath.replace(".txt","):");
+    filepath = filepath.replace('GeneratorMatrices/G_','');
+    filepath = filepath.replace('cage_','Cage(');
+    filepath = filepath.replace('_',',');
+    filepath = filepath.replace('.txt','):');
     return filepath;
 
 def getCageGirth(filepath):
-    filepath = filepath.replace("GeneratorMatrices/G_cage_","");
-    filepath = filepath.replace("_"," ");
-    filepath = filepath.replace(".txt","");
+    filepath = filepath.replace('GeneratorMatrices/G_cage_','');
+    filepath = filepath.replace('_',' ');
+    filepath = filepath.replace('.txt','');
     numbers = filepath.split();
     return int(numbers[1]);
 
@@ -84,8 +84,6 @@ def sortParityCheckFilesBySize(filepaths):
     filepaths = sorted( filepaths, key =  lambda x: os.stat(x).st_size);
     return filepaths;
 main()
-︡6fbbe016-f6d7-4203-bf66-aacc4e391694︡
-
 
 
 

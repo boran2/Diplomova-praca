@@ -1,4 +1,3 @@
-︠c501c462-f279-45ab-90ed-0e7ad4223c45r︠
 import random
 import datetime
 
@@ -15,10 +14,10 @@ def main():
         g = cage[1];
         startTime = datetime.datetime.now();
         H = getParityCheckMatrixFromCage(k,g);
-        file = open("ParityCheckMatrices/H_cage_"+str(k)+"_"+str(g)+".txt", "w");
+        file = open('ParityCheckMatrices/H_cage_'+str(k)+'_'+str(g)+'.txt', 'w');
         file.write(str(H));
         time = datetime.datetime.now() - startTime;
-        print("H_Cage("+str(k)+","+str(g)+") was created! It takes "+str(time.total_seconds()) +" seconds!\n");
+        print('Súbor H_Cage('+str(k)+','+str(g)+') ból úspešne vytvorený! Doba trvania: '+str(time.total_seconds()) +'s\n');
         file.close();
 
 # zoradi klietky podla Moorovho ohranicenia
@@ -47,8 +46,8 @@ def getParityCheckMatrixFromCage(k,g):
     cageInput.append(g);
 
     if ((cageInput in sageCages) == false and (cageInput in exoosCages) == false and (cageInput in myConstructedCages) == false):
-        print("\n");
-        print("Klietka nie je medzi uvazovanymi alebo neexistuje\n");
+        print('\n');
+        print('Klietka nie je medzi uvazovanymi alebo neexistuje\n');
         return;
 
     graph = graphs.EmptyGraph();
@@ -71,12 +70,12 @@ def getParityCheckMatrixFromCage(k,g):
         if k == 7 and g == 5:
             cage = graphs.HoffmanSingletonGraph();
     elif cageInput in exoosCages:
-        cage = generateGraphandCageFromExoosAdjacencylist("ExoosCages/cage_"+str(k)+"_"+str(g)+".txt");
+        cage = generateGraphandCageFromExoosAdjacencylist('ExoosCages/cage_'+str(k)+'_'+str(g)+'.txt');
     elif cageInput in myConstructedCages:
         if k == 6 and g == 4:
             cage = generate_6_4CageGraph();
     if (cageVerification(cage,k,g) == False):
-        print("Klietka Cage(" +str(k) +","+str(g) +") neexistuje\n");
+        print('Klietka Cage(' +str(k) +','+str(g) +') neexistuje\n');
         return;
     return getParityCheckMatrix(cage);
 
@@ -107,7 +106,7 @@ def generate_6_4CageGraph():
     graph = graphs.DegreeSequenceBipartite(s,s);
     for i in range (m):
         graph.set_vertex(i, str(i))
-    graph.name("Cage (6,4)");
+    graph.name('Cage (6,4)');
     return graph;
 
 # ziska vsetky cykly prechadzajúce vrcholom 0
@@ -129,12 +128,12 @@ def remove_values_from_list(the_list, val):
 
 # parsovanie Exoo dokumentov so zoznamami susednych vrcholov na generovanie grafu
 def generateGraphandCageFromExoosAdjacencylist(filePath):
-    file = open(filePath, "r");
+    file = open(filePath, 'r');
     graph = graphs.EmptyGraph();
     mainVertex = 0;
     for line in file:
         line = line.replace('\n', '');
-        adjacencyVerticies = line.split(" ");
+        adjacencyVerticies = line.split(' ');
         adjacencyVerticies = remove_values_from_list(adjacencyVerticies, '');
         for adjacencyVertex in adjacencyVerticies:
             graph.add_edge(mainVertex, int(adjacencyVertex));
@@ -155,8 +154,6 @@ def cageVerification(cage,k,g):
     return True;
 
 main()
-︡912b80c5-09ef-40ba-b775-fd3bbabd2eca︡{"stdout":"H_Cage(3,5) was created! It takes 0.101029 seconds!\n"}︡{"stdout":"\nH_Cage(6,4) was created! It takes 0.036821 seconds!\n\nH_Cage(3,6) was created! It takes 0.004837 seconds!\n\nH_Cage(4,5) was created! It takes 1.228964 seconds!\n"}︡{"stdout":"\nH_Cage(3,7) was created! It takes 0.00512 seconds!\n\nH_Cage(3,8) was created! It takes 0.006676 seconds!\n\nH_Cage(7,5) was created! It takes 0.106223 seconds!\n"}︡{"stdout":"\nH_Cage(4,7) was created! It takes 0.030176 seconds!\n\nH_Cage(3,10) was created! It takes 0.081272 seconds!\n"}︡{"stdout":"\nH_Cage(3,11) was created! It takes 0.104694 seconds!\n"}︡{"stdout":"\nH_Cage(10,5) was created! It takes 0.812943 seconds!\n"}︡{"stdout":"\nH_Cage(11,5) was created! It takes 1.176108 seconds!\n"}︡{"stdout":"\nH_Cage(12,5) was created! It takes 2.390939 seconds!\n"}︡{"stdout":"\nH_Cage(4,9) was created! It takes 1.303537 seconds!\n"}︡{"stdout":"\nH_Cage(13,5) was created! It takes 3.315387 seconds!\n"}︡{"stdout":"\nH_Cage(4,10) was created! It takes 2.686201 seconds!\n"}︡{"stdout":"\nH_Cage(3,14) was created! It takes 3.093237 seconds!\n"}︡{"stdout":"\nH_Cage(7,7) was created! It takes 12.912481 seconds!\n"}︡{"stdout":"\nH_Cage(3,16) was created! It takes 12.081623 seconds!\n"}︡{"stdout":"\nH_Cage(7,8) was created! It takes 14.802669 seconds!\n"}︡{"stdout":"\nH_Cage(3,16) was created! It takes 11.090221 seconds!\n"}︡{"stdout":"\nH_Cage(7,8) was created! It takes 13.127756 seconds!\n"}
-
 
 
 
