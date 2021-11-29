@@ -1,4 +1,3 @@
-︠e3c29fac-bca5-47f9-9c90-919b9e09cbe0s︠
 def calculateMooreBound(k,g):
     M = 0;
     if g % 2 == 1:
@@ -39,8 +38,6 @@ print("M(10,5) = "+ str(calculateMooreBound(10,5)));
 print("M(11,5) = "+ str(calculateMooreBound(11,5)));
 print("M(12,5) = "+ str(calculateMooreBound(12,5)));
 print("M(13,5) = "+ str(calculateMooreBound(13,5)));
-︡c65a63be-7b99-4fcd-ad68-2731d8a1e09e︡{"stdout":"M(3,5) = 10\n"}︡{"stdout":"M(3,6) = 14\n"}︡{"stdout":"M(3,7) = 22\n"}︡{"stdout":"M(3,8) = 30\n"}︡{"stdout":"M(3,10) = 62\n"}︡{"stdout":"M(3,11) = 94\n"}︡{"stdout":"M(3,14) = 254\n"}︡{"stdout":"M(3,16) = 510\n"}︡{"stdout":"M(3,17) = 766\n"}︡{"stdout":"M(3,18) = 1022\n"}︡{"stdout":"M(3,20) = 2046\n"}︡{"stdout":"M(3,23) = 6142\n"}︡{"stdout":"M(3,25) = 12286\n"}︡{"stdout":"M(4,5) = 17\n"}︡{"stdout":"M(4,7) = 53\n"}︡{"stdout":"M(4,9) = 161\n"}︡{"stdout":"M(4,10) = 242\n"}︡{"stdout":"M(5,10) = 682\n"}︡{"stdout":"M(6,4) = 12\n"}︡{"stdout":"M(7,5) = 50\n"}︡{"stdout":"M(7,7) = 302\n"}︡{"stdout":"M(7,8) = 518\n"}︡{"stdout":"M(10,5) = 101\n"}︡{"stdout":"M(11,5) = 122\n"}︡{"stdout":"M(12,5) = 145\n"}︡{"stdout":"M(13,5) = 170\n"}︡{"done":true}
-
 
 
 
