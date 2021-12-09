@@ -78,6 +78,9 @@ Zahŕňa vyššie zmieňenú optimalizovanú funkcionalitu vrámci jedného proj
 ## PDF- verzia:
 LaTex_Diplomova_Praca.pdf
 
+## Aktuálna prezentácia:
+Boran_DP-Grupy automorfizmov linearnych kodov2.pptx
+
 ## testovanie:
 ### 1. Testovanie získaných klietok a rekordných grafov
 otvoriť a spustiť generateCageAndLinearCodeByParameters.sagew - potrebné meniť k,g parametre, otestuje počet vrcholov a hran ako aj ci moze klietka existovat
