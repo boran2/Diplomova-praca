@@ -6,47 +6,84 @@ Lineárne kódy sú podpriestory konečnorozmerných vektrorových priestorov na
 
 Jedným zo spôsobov ako je možné vygenerovať lineárny LDPC kód je pomocou klietky (pravidelný k-regulárny graf s obvodom g). Z klietok je možné zistiť incidenčnú maticu ako aj grupy automorfizmov.
 
-## Ukážka čiastkových riešení
+## Ukážka riešenia č.1
 Prostredie: CoCalc (http://cocalc.com/) - online aplikácia na spúšťanie Sage projektov
 1. je potrebné vyplniť jednoduchú registráciu
 2. Po úspešnom registrovaní je potrebné zadať token: tEym4xMQrcpX5Gs5 (vpravo hore v projektoch je input "project invite token") a stlačiť enter
 3. Mal by sa Vám zobraziť projekt s 3 sage súbormi, tie pude potrebné otvoriť a spustiť pomocou tlačidla run nasledovným spôsobom:
 
-### 1. Generovanie incidenčných matíc, grúp automorfizmov zo zadaných klietok 
-otvoriť findAutoGroupsfromKnownCagesAnd64CageConstruction.sagew - potrebné meniť k,g parametre
+### 1. Generovanie klietok a rekordných grafov
+
+#### 1. Sage grafy ako vstupné dáta
+otvoriť a spustiť generateCageAndLinearCodeByParameters.sagew - potrebné meniť k,g parametre
 podľa nasledovného zoznamu klietok: [[3,5], [3,6], [3,7], [3,8], [3,10], [4,5], [7,5]]
 
-### 2. Generovanie incidenčných matíc, grúp automorfizmov zo zadaného zoznamu susedností
-otvoriť findAutoGroupsfromKnownCagesAnd64CageConstruction.sagew - potrebné meniť k,g parametre
+#### 2. Zoznam susedností ako vstupné dáta
+otvoriť a spustiť generateCageAndLinearCodeByParameters.sagew - potrebné meniť k,g parametre
 podľa nasledovného zoznamu klietok: [[3,14], [3,16], [3,17], [3,18], [3,20], [3,23], [3,25], [4,7], [4,9], [4,10], [5,10], [7,7], [7,8], [10,5], [11,5], [12,5], [13,5]]
 
-### 3. Generovanie klietky a následne incidenčných matíc, grúp automorfizmov
-otvoriť findAutoGroupsfromKnownCagesAnd64CageConstruction.sagew - potrebné nastaviť parametre  k=6, g=4
+#### 3. Vlastný návrh generovania Cage(6,4)
+otvoriť a spustiť generateCageAndLinearCodeByParameters.sagew - potrebné nastaviť parametre  k=6, g=4
 
-### 4. Experimentálne Generovanie incidenčných matíc
-otvoriť generateMatrix.sagew (parametre sú už nastavené, uvažujeme iba existenciu k=6, g=4 klietky)
+#### 4. Zistenie Moorovho ohraničenia
+otvoriť a spustiť MooreBoundsCageValidation.sagew
 
-### 5. Výpočet samostatného Moorového ohraničenia
-otvoriť MooreBounds.sagew (parametre sú už nastavené)
+### 2. Získavanie údajov z klietok alebo rekordných grafov
+otvoriť a spustiť generateCageAndLinearCodeByParameters.sagew - potrebné meniť k,g parametre
+otvoriť a spustiť cagesData.sagew - funguje pre všetky uložené klietky a rekordné grafy
 
-### 6. Generovanie kontrolných matíc lineárneho kódu a ukladanie v textovych súboroch
-otvoriť findAutoGroupsfromKnownCagesAnd64CageConstruction.sagew  - vygeneruje pre parametre k a g, ktoré je potrebné nastaviť podľa ľubovôle zo zoznamu klietok, ktoré sme uvažovali v bodoch 1, 2 a 3
+### 3. Lineárny kód a generujúca matica
+otvoriť a spustiť generateCageAndLinearCodeByParameters.sagew - potrebné meniť k,g parametre
+otvoriť a spustiť generateGeneratorMatrices.sagew - funguje pre takmer všetky uložené kontrolné matice
+#### 1. Ukladanie kontrolných matíc
+otvoriť a spustiť generateParityCheckMatrices.sagew - funguje pre takmer všetky klietky, otvoriť generateParityCheckMatricesFromCages a sledovať ako skript vytvára/updejtuje kontrolné matice v priečinku ParityCheckMatrices vo forme textových súborov
 
+#### 2. Ukladanie generujúcich matíc
+otvoriť a spustiť generateGeneratorMatrices.sagew - funguje pre takmer všetky uložené kontrolné matice, otvoriť generateGeneratorMatricesFromParityCheckMatrices a sledovať ako skript vytvára/updejtuje kontrolné matice v priečinku GeneratorMatrices vo forme textových súborov zo získaných kontrolných matíc, ktoré sme uvažovali v bode 6
 
-otvoriť generateParityCheckMatricesFromCages a sledovať ako skript vytvára/updejtuje kontrolné matice v priečinku ParityCheckMatrices vo forme textových súborov
+#### 3. Minimálna kódová vzdialenosť
+otvoriť a spustiť generateCageAndLinearCodeByParameters.sagew - potrebné meniť k,g parametre (funguje pre g <= 8)
+otvoriť a spustiť minDistanceLinearCodes.sagew - funguje pre niektore uložené generujúce matice (g <= 8)
+otvoriť a spustiť linearCodesData.sagew - funguje pre niektore generujúce matice (g <= 8)
 
-### 7. Vytváranie Generujúcich matíc lineárneho kódu z kontrolných matíc a ukladanie v textovych suboroch
-otvoriť findAutoGroupsfromKnownCagesAnd64CageConstruction.sagew  - vygeneruje pre parametre k a g, ktoré je potrebné nastaviť podľa ľubovôle zo zoznamu klietok, ktoré sme uvažovali v bodoch 1, 2 a 3; z uvažovanej matice incidencie dostaneme lineárny kód a generujúcu maticu lin. kódu
+#### 4. Počet slov v kóde
+otvoriť a spustiť generateCageAndLinearCodeByParameters.sagew - potrebné meniť k,g parametre
+otvoriť a spustiť maxnWordsLinearCodes.sagew - funguje pre všetky uložené generujúce matice
+otvoriť a spustiť linearCodesData.sagew - funguje pre všetky uložené generujúce matice 
 
+#### 5. Počet automorfizmov
+otvoriť a spustiť generateCageAndLinearCodeByParameters.sagew - potrebné meniť k,g parametre
+otvoriť a spustiť autLinearCodesData.sagew - funguje pre všetky uložené generujúce matice
+otvoriť a spustiť linearCodesData.sagew - funguje pre všetky uložené generujúce matice 
 
-otvoriť generateGeneratorMatricesFromParityCheckMatrices a sledovať ako skript vytvára/updejtuje kontrolné matice v priečinku GeneratorMatrices vo forme textových súborov zo získaných kontrolných matíc, ktoré sme uvažovali v bode 6
+#### 6. Rozmer generujúcej matice a dĺžka lin. kódu
+otvoriť a spustiť generateCageAndLinearCodeByParameters.sagew - potrebné meniť k,g parametre
+otvoriť a spustiť sizeNLinearCodesData.sagew - funguje pre všetky uložené generujúce matice
+otvoriť a spustiť linearCodesData.sagew - funguje pre všetky uložené generujúce matice 
+
+#### 7. Porovnanie s perfektnými kódmi
+otvoriť a spustiť generateCageAndLinearCodeByParameters.sagew - potrebné meniť k,g parametre, funguje keď poznáme minimálnu vzdialenosť
+otvoriť a spustiť perfectLinearCodesParameter.sagew - funguje pre všetky uložené generujúce matice, kde poznáme minimálnu vzdialenosť
+otvoriť a spustiť linearCodesData.sagew - funguje pre všetky uložené generujúce matice, kde poznáme minimálnu vzdialenosť
+
+## Ukážka riešenia č.2 (optimalizácia softvérového riešenia)
+Konzolová aplikácia consoleAppCages: https://github.com/boran2/consoleAppCages
+Zahŕňa vyššie zmieňenú funkcionalitu vrámci jedného projektu. Požívateľ sa naviguje na základe čísel v menu.
 
 ## PDF- verzia:
 LaTex_Diplomova_Praca.pdf
 
 ## testovanie:
-findAutoGroupsfromKnownCagesAnd64CageConstruction.sagew - vrámci konštrukcie - validácia
-Moorove ohraničenie (MooreBounds.sagew)
+### 1. Testovanie získaných klietok a rekordných grafov
+otvoriť a spustiť generateCageAndLinearCodeByParameters.sagew - potrebné meniť k,g parametre, otestuje pocet vrcholov a hran ako aj ci moze klietka existovat
+
+### 2. Testovanie lineárneho kódu
+otvoriť a spustiť generateCageAndLinearCodeByParameters.sagew - potrebné meniť k,g parametre - otestuje ci kod existuje 
+otvoriť a spustiť linearCodeValidation.sagew - funguje pre existujúce uložené dvojice kontrolných a generujúcich matíc vzniknutých z rovnakej klietky - otestuje ci kod existuje 
+
+### 3. Testovanie textových súborov
+otvoriť a spustiť generateGeneratorMatrices.sagew - otestuje ci nahodou subor s kontrolnou maticou nie je prazdny
+
 
 ## vízie do budúcna:
 preskúmať možnosti generovania Incidenčných matíc a z nich by sme chceli dostat klietky
