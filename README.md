@@ -79,7 +79,7 @@ Zahŕňa vyššie zmieňenú optimalizovanú funkcionalitu vrámci jedného proj
 LaTex_Diplomova_Praca.pdf
 
 ## Aktuálna prezentácia:
-Boran_DP-Grupy automorfizmov linearnych kodov2.pptx
+Boran_DP-Grupy automorfizmov linearnych kodov2.ppt
 
 ## testovanie:
 ### 1. Testovanie získaných klietok a rekordných grafov
