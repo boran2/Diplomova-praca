@@ -29,41 +29,41 @@ otvoriť a spustiť generateCageAndLinearCodeByParameters.sagew - potrebné nast
 otvoriť a spustiť MooreBoundsCageValidation.sagew
 
 ### 2. Získavanie údajov z klietok alebo rekordných grafov
-otvoriť a spustiť generateCageAndLinearCodeByParameters.sagew - potrebné meniť k,g parametre
+otvoriť a spustiť generateCageAndLinearCodeByParameters.sagew - potrebné meniť k,g parametre alebo
 otvoriť a spustiť cagesData.sagew - funguje pre všetky uložené klietky a rekordné grafy
 
 ### 3. Lineárny kód a generujúca matica
-otvoriť a spustiť generateCageAndLinearCodeByParameters.sagew - potrebné meniť k,g parametre
+otvoriť a spustiť generateCageAndLinearCodeByParameters.sagew - potrebné meniť k,g parametre alebo 
 otvoriť a spustiť generateGeneratorMatrices.sagew - funguje pre takmer všetky uložené kontrolné matice
 #### 1. Ukladanie kontrolných matíc
-otvoriť a spustiť generateParityCheckMatrices.sagew - funguje pre takmer všetky klietky, otvoriť generateParityCheckMatricesFromCages a sledovať ako skript vytvára/updejtuje kontrolné matice v priečinku ParityCheckMatrices vo forme textových súborov
+otvoriť a spustiť generateParityCheckMatrices.sagew - funguje pre takmer všetky klietky alebo otvoriť generateParityCheckMatricesFromCages a sledovať ako skript vytvára/updejtuje kontrolné matice v priečinku ParityCheckMatrices vo forme textových súborov
 
 #### 2. Ukladanie generujúcich matíc
-otvoriť a spustiť generateGeneratorMatrices.sagew - funguje pre takmer všetky uložené kontrolné matice, otvoriť generateGeneratorMatricesFromParityCheckMatrices a sledovať ako skript vytvára/updejtuje kontrolné matice v priečinku GeneratorMatrices vo forme textových súborov zo získaných kontrolných matíc, ktoré sme uvažovali v bode 6
+otvoriť a spustiť generateGeneratorMatrices.sagew - funguje pre takmer všetky uložené kontrolné matice alebo otvoriť generateGeneratorMatricesFromParityCheckMatrices a sledovať ako skript vytvára/updejtuje kontrolné matice v priečinku GeneratorMatrices vo forme textových súborov zo získaných kontrolných matíc, ktoré sme uvažovali v bode 6
 
 #### 3. Minimálna kódová vzdialenosť
-otvoriť a spustiť generateCageAndLinearCodeByParameters.sagew - potrebné meniť k,g parametre (funguje pre g <= 8)
-otvoriť a spustiť minDistanceLinearCodes.sagew - funguje pre niektore uložené generujúce matice (g <= 8)
-otvoriť a spustiť linearCodesData.sagew - funguje pre niektore generujúce matice (g <= 8)
+otvoriť a spustiť generateCageAndLinearCodeByParameters.sagew - potrebné meniť k,g parametre (funguje pre g <= 8) alebo 
+otvoriť a spustiť minDistanceLinearCodes.sagew - funguje pre niektore uložené generujúce matice (g <= 8) alebo
+otvoriť a spustiť linearCodesData.sagew - funguje pre niektore generujúce matice (g <= 8) 
 
 #### 4. Počet slov v kóde
-otvoriť a spustiť generateCageAndLinearCodeByParameters.sagew - potrebné meniť k,g parametre
-otvoriť a spustiť maxnWordsLinearCodes.sagew - funguje pre všetky uložené generujúce matice
+otvoriť a spustiť generateCageAndLinearCodeByParameters.sagew - potrebné meniť k,g parametre alebo
+otvoriť a spustiť maxnWordsLinearCodes.sagew - funguje pre všetky uložené generujúce matice alebo
 otvoriť a spustiť linearCodesData.sagew - funguje pre všetky uložené generujúce matice 
 
 #### 5. Počet automorfizmov
-otvoriť a spustiť generateCageAndLinearCodeByParameters.sagew - potrebné meniť k,g parametre
-otvoriť a spustiť autLinearCodesData.sagew - funguje pre všetky uložené generujúce matice
+otvoriť a spustiť generateCageAndLinearCodeByParameters.sagew - potrebné meniť k,g parametre alebo
+otvoriť a spustiť autLinearCodesData.sagew - funguje pre všetky uložené generujúce matice alebo
 otvoriť a spustiť linearCodesData.sagew - funguje pre všetky uložené generujúce matice 
 
 #### 6. Rozmer generujúcej matice a dĺžka lin. kódu
-otvoriť a spustiť generateCageAndLinearCodeByParameters.sagew - potrebné meniť k,g parametre
-otvoriť a spustiť sizeNLinearCodesData.sagew - funguje pre všetky uložené generujúce matice
+otvoriť a spustiť generateCageAndLinearCodeByParameters.sagew - potrebné meniť k,g parametre alebo
+otvoriť a spustiť sizeNLinearCodesData.sagew - funguje pre všetky uložené generujúce matice alebo
 otvoriť a spustiť linearCodesData.sagew - funguje pre všetky uložené generujúce matice 
 
 #### 7. Porovnanie s perfektnými kódmi
-otvoriť a spustiť generateCageAndLinearCodeByParameters.sagew - potrebné meniť k,g parametre, funguje keď poznáme minimálnu vzdialenosť
-otvoriť a spustiť perfectLinearCodesParameter.sagew - funguje pre všetky uložené generujúce matice, kde poznáme minimálnu vzdialenosť
+otvoriť a spustiť generateCageAndLinearCodeByParameters.sagew - potrebné meniť k,g parametre, funguje keď poznáme minimálnu vzdialenosť alebo
+otvoriť a spustiť perfectLinearCodesParameter.sagew - funguje pre všetky uložené generujúce matice, kde poznáme minimálnu vzdialenosť alebo
 otvoriť a spustiť linearCodesData.sagew - funguje pre všetky uložené generujúce matice, kde poznáme minimálnu vzdialenosť
 
 ## Ukážka riešenia č.2 (optimalizácia softvérového riešenia)
@@ -80,7 +80,7 @@ LaTex_Diplomova_Praca.pdf
 
 ## testovanie:
 ### 1. Testovanie získaných klietok a rekordných grafov
-otvoriť a spustiť generateCageAndLinearCodeByParameters.sagew - potrebné meniť k,g parametre, otestuje pocet vrcholov a hran ako aj ci moze klietka existovat
+otvoriť a spustiť generateCageAndLinearCodeByParameters.sagew - potrebné meniť k,g parametre, otestuje počet vrcholov a hran ako aj ci moze klietka existovat
 
 ### 2. Testovanie lineárneho kódu
 otvoriť a spustiť generateCageAndLinearCodeByParameters.sagew - potrebné meniť k,g parametre - otestuje ci kod existuje 
