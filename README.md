@@ -73,7 +73,7 @@ Prostredie: SageMath príkazový riadok (https://www.sagemath.org/)
 3. V Sage príkazovom riadku je potrebné sa dostať do priečinka s projektom a spustiť pomocou load("main.py")
 
 Konzolová aplikácia consoleAppCages: https://github.com/boran2/consoleAppCages.
-Zahŕňa vyššie zmieňenú funkcionalitu vrámci jedného projektu. Požívateľ sa naviguje na základe čísel v menu.
+Zahŕňa vyššie zmieňenú optimalizovanú funkcionalitu vrámci jedného projektu. Požívateľ sa naviguje na základe čísel v menu.
 
 ## PDF- verzia:
 LaTex_Diplomova_Praca.pdf
