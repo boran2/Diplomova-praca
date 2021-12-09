@@ -9,7 +9,7 @@ Jedným zo spôsobov ako je možné vygenerovať lineárny LDPC kód je pomocou 
 ## Ukážka riešenia č.1
 Prostredie: CoCalc (http://cocalc.com/) - online aplikácia na spúšťanie Sage projektov
 1. je potrebné vyplniť jednoduchú registráciu
-2. Po úspešnom registrovaní je potrebné zadať token: tEym4xMQrcpX5Gs5 (vpravo hore v projektoch je input "project invite token") a stlačiť enter
+2. Po úspešnom registrovaní je potrebné zadať token: wyeXn32E31avtBUe (vpravo hore v projektoch je input "project invite token") a stlačiť enter
 3. Mal by sa Vám zobraziť projekt s viacerými súbormi a 3 adresármi
 
 ### 1. Generovanie klietok a rekordných grafov
