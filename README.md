@@ -67,6 +67,11 @@ otvoriť a spustiť perfectLinearCodesParameter.sagew - funguje pre všetky ulo�
 otvoriť a spustiť linearCodesData.sagew - funguje pre všetky uložené generujúce matice, kde poznáme minimálnu vzdialenosť
 
 ## Ukážka riešenia č.2 (optimalizácia softvérového riešenia)
+Prostredie: SageMath príkazový riadok (https://www.sagemath.org/)
+1. je potrebné stiahnúť inštalačný súbor a spustiť ho
+2. vytvoria sa 3 súbory, Sage príkazový riadok, Sage notebook a Sage shell
+3. V Sage príkazovom riadku je potrebné sa dostať do priečinka s projektom a spustiť pomocou load("main.py")
+
 Konzolová aplikácia consoleAppCages: https://github.com/boran2/consoleAppCages.
 Zahŕňa vyššie zmieňenú funkcionalitu vrámci jedného projektu. Požívateľ sa naviguje na základe čísel v menu.
 
