@@ -103,6 +103,9 @@ http://dspace.hebron.edu/jspui/bitstream/123456789/788/1/On%20the%20automorphism
 https://doc.sagemath.org/pdf/en/reference/coding/coding.pdf
 https://books.google.sk/books?hl=sk&lr=&id=UTxjBX9lKoMC&oi=fnd&pg=PP13&dq=a+first+course+in+coding+theory+hill&ots=5FjjAq0uTG&sig=j5rDG7eAUBlrzGbZ38VT34DSoH0&redir_esc=y#v=onepage&q=a%20first%20course%20in%20coding%20theory%20hill&f=false
 https://publications.waset.org/12279/low-complexity-high-performance-ldpc-codes-based-on-defected-fullerene-graphs
+https://www.win.tue.nl/~aeb/codes/binary-1.html
+http://cs.indstate.edu/ge/CAGES/index.html
+http://opac.crzp.sk/?fn=detailBiblioForm&sid=65CF89236B0A7E124DD17CE040F7&seo=CRZP-detail-kniha
 
 ##  link na prácu v LATEX:
 overleaf: https://www.overleaf.com/read/fdkwtgxntwjs
