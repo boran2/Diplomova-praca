@@ -90,7 +90,7 @@ otvoriť a spustiť linearCodeValidation.sagew - funguje pre existujúce uložen
 otvoriť a spustiť generateGeneratorMatrices.sagew - otestuje ci nahodou subor s kontrolnou maticou nie je prazdny
 
 ## vízie do budúcna:
-zostrojiť lineárne kódy priamo z klietkovej grupy automorfizmov.
+Zostrojiť lineárne kódy priamo z klietkovej grupy automorfizmov.
 Koľko existuje kódov s touto grupou automorfizmov?
 
 ##  linky na publikácie:
