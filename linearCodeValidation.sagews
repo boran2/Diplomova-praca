@@ -1,7 +1,9 @@
+︠06a1949c-49be-4e1b-9c68-5a93a759658f︠
 import random
 import glob
 import os
 
+# zoradi textove subory generujucich matic podla velkosti, nacita ich aj subory kont. matic a spravi vypocet
 def main():
     filepathsG = glob.glob('GeneratorMatrices/*.txt');
     sortedfilepathsG = sortParityCheckFilesBySize(filepathsG);
@@ -23,6 +25,7 @@ def main():
             print('Súbor ' + str(sortedfilepathsG[i]) +' alebo ' + str(filepathH) + ' je prázdny! Nemôžem vykonať validáciu matíc!\n');
             continue;
 
+# prevedie obsah suboru do maticovaej formy
 def getMatrixForm(file):
     mat = []
     for line in file:
@@ -36,6 +39,7 @@ def getMatrixForm(file):
         mat.append(row);
     return matrix(GF(2), mat);
 
+# z nazvu suboru zisti meno matice
 def getCageName(filepath):
     filepath = filepath.replace('GeneratorMatrices/G_','');
     filepath = filepath.replace('cage_','Cage(');
@@ -43,6 +47,7 @@ def getCageName(filepath):
     filepath = filepath.replace('.txt','):');
     return filepath;
 
+# zisti nazov suboru pre kontrolnu maticu
 def getFilepathH(filepath):
     filepath = filepath.replace('GeneratorMatrices/G_','ParityCheckMatrices/H_');
     return filepath;
@@ -57,10 +62,12 @@ def isLinearCodeValid(G,H):
     else:
         return False;
 
+# zoradi textove subory na zaklade velkosti
 def sortParityCheckFilesBySize(filepaths):
     filepaths = sorted( filepaths, key =  lambda x: os.stat(x).st_size);
     return filepaths;
 main()
+︡a9b5a854-dbb9-4805-bd27-d22d1274a291︡{"stdout":"Cage(3,5): Kód je validný!\nCage(3,6): Kód je validný!\nCage(3,7): Kód je validný!\nCage(3,8): Kód je validný!\nCage(4,5): Kód je validný!\nCage(6,4): Kód je validný!\nCage(3,10): Kód je validný!\nCage(4,7): Kód je validný!\nCage(3,11): Kód je validný!"}︡{"stdout":"\nCage(7,5): Kód je validný!\nCage(3,14): Kód je validný!"}︡{"stdout":"\nCage(4,9): Kód je validný!"}︡{"stdout":"\nCage(4,10): Kód je validný!"}︡{"stdout":"\nCage(10,5): Kód je validný!"}︡{"stdout":"\nCage(11,5): Kód je validný!"}︡{"stdout":"\nCage(3,16): Kód je validný!"}︡{"stdout":"\nCage(12,5): Kód je validný!"}︡{"stdout":"\nCage(13,5): Kód je validný!"}︡{"stdout":"\n"}︡{"done":true}
 
 
 

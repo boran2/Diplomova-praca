@@ -1,4 +1,5 @@
-︠import random
+︠fe7f27ac-7812-48c0-9e10-5855e8a65743︠
+import random
 
 def main():
 # ***************vstupne data*****************
@@ -84,6 +85,8 @@ def codeSizeByMooreBound(M,k):
 def numberOfEdgesByMooreBound(M,k):
     return M * k / 2;
 
+
+# vygeneruje Cage(6,4), bez vstupnych parametrov ako bipartitny graf - individualny pristup
 def generate_6_4CageGraph():
     m = calculateMooreBound(6,4);
     s =[]
@@ -108,7 +111,7 @@ def getCycles(graph):
 def getParityCheckMatrix(graph):
     return matrix(GF(2), graph.incidence_matrix());
 
-# vrati kontrolnu maticu linearneho kodu ako incidencnu maticu klietky ziskanu z grafu nad polom Z2
+# vrati generujucu maticu linearneho kodu
 def getGeneratorMatrix(H):
     # vygeneruje lin kod z kontrolnej matice
     C = codes.from_parity_check_matrix(H);
@@ -156,11 +159,11 @@ def getAndshowCageInformations(graph,g):
 #     print(' \n')
     print('počet automorfizmov z lineárneho kódu AutGroup(C) = ' + str(autGroupC) + ' \n');
 
-
+# zisti pocet kodovych slov z generujucej matice G
 def getMaxNumberOfCodewords(G):
     return 2^G.nrows();
 
-# udava vzdialenost nasho kodu od perfektneho v intervale 0 - 1, kedy 1 je perfektny kod 23,2^12,7 7,2^4,3
+# udava vzdialenost nasho kodu od perfektneho v intervale 0 - 1, kedy 1 je perfektny kod
 def perfectCodeParameter(n,M,d):
     if d % 2 == 1:
         t = (d-1)/2;     # t=(d-1)/2 pre neparne
@@ -172,15 +175,18 @@ def perfectCodeParameter(n,M,d):
     parameter = (M*sum)/(2^n)
     return parameter;
 
+# vypocet faktorialu
 def factorial(n):
     fact = 1;
     for i in range(1,n+1):
         fact = fact * i
     return fact;
 
+# vypocet kombinacneho cisla
 def combinationNumber(n,k):
     return factorial(n)/(factorial(k)*factorial(n-k));
 
+# vypocita informacny pomer z matice H
 def getRate(nRows, nCols):
     return (nCols - nRows) / nCols;
 
@@ -237,6 +243,8 @@ def isLinearCodeValid(G,H):
         return False;
 
 main()
+︡088b732d-0a2d-4c8d-ade2-028660d437f5︡{"stdout":" \n\nCage(3,5)\n\n"}︡{"file":{"filename":"/home/user/.sage/temp/project-376af7c8-9ff4-41d1-b610-f8b2428e9ab4/2767/tmp_ti1wo4fx.svg","show":true,"text":null,"uuid":"819faba1-46e9-4ea2-be6b-58833d10e97a"},"once":false}︡{"stdout":" \n"}︡{"stdout":"\nCykly formujúce klietku: [[[4, 3, 8, 5, 0]], [[1, 2, 3, 4, 0]], [[1, 6, 8, 5, 0]], [[1, 2, 7, 5, 0]], [[4, 9, 7, 5, 0]], [[1, 6, 9, 4, 0]]] \n\n \n\nPočet vrcholov klietky ver = 10 \n\nPočet hran klietky edg = 15 \n\nPočet automorfizmov z klietky autGroup = 120 \n\nIncidencna matica klietky, Kontrolna matica H:  \n[1 1 1 0 0 0 0 0 0 0 0 0 0 0 0]\n[1 0 0 1 1 0 0 0 0 0 0 0 0 0 0]\n[0 0 0 1 0 1 1 0 0 0 0 0 0 0 0]\n[0 0 0 0 0 1 0 1 1 0 0 0 0 0 0]\n[0 1 0 0 0 0 0 1 0 1 0 0 0 0 0]\n[0 0 1 0 0 0 0 0 0 0 1 1 0 0 0]\n[0 0 0 0 1 0 0 0 0 0 0 0 1 1 0]\n[0 0 0 0 0 0 1 0 0 0 1 0 0 0 1]\n[0 0 0 0 0 0 0 0 1 0 0 1 1 0 0]\n[0 0 0 0 0 0 0 0 0 1 0 0 0 1 1] \n\nInformačný pomer R = 0.3333333333333333 \n\nLineárny kód C = [15, 6] linear code over GF(2) \n\nGenerujúca matica lineárneho kódu G: \n[1 0 1 0 1 0 0 0 0 0 0 1 1 0 0]\n[0 1 1 0 0 0 0 0 0 1 0 1 1 1 0]\n[0 0 0 1 1 0 1 0 0 0 0 0 0 1 1]\n[0 0 0 0 0 1 1 0 1 0 0 0 1 1 1]\n[0 0 0 0 0 0 0 1 1 1 0 0 1 1 0]\n[0 0 0 0 0 0 0 0 0 0 1 1 1 1 1] \n\nMaximalny pocet slov zakodovanych v kode m = 64 \n\nParameter perfektneho kodu p(n,m,d) = 0.236328125000000 \n\nMinimálna vzdialenost v kóde d = 5 \n\nOverenie ci je Lineárny kód validný: True \n\npočet automorfizmov z lineárneho kódu AutGroup(C) = 120 \n\n \n\nOverenie vypoctom: \nMoorové ohraničenie potencionálnej klietky - pocet vrcholov: M(3,5) = 10\nMinimalny rozmer matice H =  10 x 15\nObvod cyklu v incidencnej matici =  10\nMinimalny pocet hran =  15\n"}︡{"done":true}
+
 
 
 

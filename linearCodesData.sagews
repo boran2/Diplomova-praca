@@ -2,6 +2,7 @@ import random
 import glob
 import os
 
+# zoradi textove subory generujucich matic podla velkosti, nacita ich a zobrazi data
 def main():
     filepaths = glob.glob('GeneratorMatrices/*.txt');
     sortedfilepaths = sortParityCheckFilesBySize(filepaths);
@@ -38,15 +39,18 @@ def perfectCodeParameter(n,M,d):
     parameter = (M*sum)/(2^n)
     return parameter;
 
+# vypocet faktorialu
 def factorial(n):
     fact = 1;
     for i in range(1,n+1):
         fact = fact * i
     return fact;
 
+# vypocet kombinacneho cisla
 def combinationNumber(n,k):
     return factorial(n)/(factorial(k)*factorial(n-k));
 
+# prevedie obsah suboru do maticovaej formy
 def getMatrixFormG(file):
     H = []
     for line in file:
@@ -60,6 +64,7 @@ def getMatrixFormG(file):
         H.append(row);
     return matrix(GF(2),H);
 
+# z nazvu suboru zisti meno matice
 def getCageName(filepath):
     filepath = filepath.replace('GeneratorMatrices/G_','');
     filepath = filepath.replace('cage_','Cage(');
@@ -67,23 +72,20 @@ def getCageName(filepath):
     filepath = filepath.replace('.txt','):');
     return filepath;
 
-def getCageGirth(filepath):
-    filepath = filepath.replace('GeneratorMatrices/G_cage_','');
-    filepath = filepath.replace('_',' ');
-    filepath = filepath.replace('.txt','');
-    numbers = filepath.split();
-    return int(numbers[1]);
-
+# zisti pocet kodovych slov
 def getMaxNumberOfCodewords(G):
     return 2^G.nrows();
 
+# zisti pocet automorfizmov
 def getNumberOfAut(C):
     return C.permutation_automorphism_group().order();
 
+# zoradi textove subory na zaklade velkosti
 def sortParityCheckFilesBySize(filepaths):
     filepaths = sorted( filepaths, key =  lambda x: os.stat(x).st_size);
     return filepaths;
 main()
+
 
 
 

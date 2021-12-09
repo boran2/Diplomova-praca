@@ -1,5 +1,6 @@
 import numpy;
 
+# parametre Cage(6,4)
 def main():
     k=6;
     pocetHran = 36;
