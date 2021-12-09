@@ -96,7 +96,6 @@ http://assets.cambridge.org/97805217/82807/sample/9780521782807ws.pdf
 https://eprint.iacr.org/2012/409.pdf
 http://dspace.hebron.edu/jspui/bitstream/123456789/788/1/On%20the%20automorphism%20groups%20of%20some%20linear%20codes.pdf
 https://doc.sagemath.org/pdf/en/reference/coding/coding.pdf
-
 https://books.google.sk/books?hl=sk&lr=&id=UTxjBX9lKoMC&oi=fnd&pg=PP13&dq=a+first+course+in+coding+theory+hill&ots=5FjjAq0uTG&sig=j5rDG7eAUBlrzGbZ38VT34DSoH0&redir_esc=y#v=onepage&q=a%20first%20course%20in%20coding%20theory%20hill&f=false
 https://publications.waset.org/12279/low-complexity-high-performance-ldpc-codes-based-on-defected-fullerene-graphs
 
