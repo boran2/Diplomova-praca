@@ -67,7 +67,7 @@ otvoriť a spustiť perfectLinearCodesParameter.sagew - funguje pre všetky ulo�
 otvoriť a spustiť linearCodesData.sagew - funguje pre všetky uložené generujúce matice, kde poznáme minimálnu vzdialenosť
 
 ## Ukážka riešenia č.2 (optimalizácia softvérového riešenia)
-Konzolová aplikácia consoleAppCages: https://github.com/boran2/consoleAppCages
+Konzolová aplikácia consoleAppCages: https://github.com/boran2/consoleAppCages.
 Zahŕňa vyššie zmieňenú funkcionalitu vrámci jedného projektu. Požívateľ sa naviguje na základe čísel v menu.
 
 ## PDF- verzia:
@@ -83,7 +83,6 @@ otvoriť a spustiť linearCodeValidation.sagew - funguje pre existujúce uložen
 
 ### 3. Testovanie textových súborov
 otvoriť a spustiť generateGeneratorMatrices.sagew - otestuje ci nahodou subor s kontrolnou maticou nie je prazdny
-
 
 ## vízie do budúcna:
 preskúmať možnosti generovania Incidenčných matíc a z nich by sme chceli dostat klietky
