@@ -1,4 +1,3 @@
-︠92f38638-6bb9-48ed-9c3e-ea099b717defr︠
 import random
 import glob
 import os
@@ -48,11 +47,6 @@ def sortParityCheckFilesBySize(filepaths):
     filepaths = sorted( filepaths, key =  lambda x: os.stat(x).st_size);
     return filepaths;
 main()
-︡82394580-c007-4913-92c4-ec6b0ca9c789︡{"stdout":"G_Cage(3,5):"}︡{"stdout":"\nMinimalna vzdialenost v kode d = 5\n\n\nG_Cage(3,6):"}︡{"stdout":"\nMinimalna vzdialenost v kode d = 6\n\n\nG_Cage(3,7):"}︡{"stdout":"\nMinimalna vzdialenost v kode d = 7\n\n\nG_Cage(3,8):"}︡{"stdout":"\nMinimalna vzdialenost v kode d = 8\n\n\nG_Cage(4,5):"}︡{"stdout":"\nMinimalna vzdialenost v kode d = 5\n\n\nG_Cage(6,4):"}
-
-
-
-
 
 
 

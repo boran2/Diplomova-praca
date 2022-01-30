@@ -1,4 +1,3 @@
-︠06a1949c-49be-4e1b-9c68-5a93a759658f︠
 import random
 import glob
 import os
@@ -67,11 +66,6 @@ def sortParityCheckFilesBySize(filepaths):
     filepaths = sorted( filepaths, key =  lambda x: os.stat(x).st_size);
     return filepaths;
 main()
-︡a9b5a854-dbb9-4805-bd27-d22d1274a291︡{"stdout":"Cage(3,5): Kód je validný!\nCage(3,6): Kód je validný!\nCage(3,7): Kód je validný!\nCage(3,8): Kód je validný!\nCage(4,5): Kód je validný!\nCage(6,4): Kód je validný!\nCage(3,10): Kód je validný!\nCage(4,7): Kód je validný!\nCage(3,11): Kód je validný!"}︡{"stdout":"\nCage(7,5): Kód je validný!\nCage(3,14): Kód je validný!"}︡{"stdout":"\nCage(4,9): Kód je validný!"}︡{"stdout":"\nCage(4,10): Kód je validný!"}︡{"stdout":"\nCage(10,5): Kód je validný!"}︡{"stdout":"\nCage(11,5): Kód je validný!"}︡{"stdout":"\nCage(3,16): Kód je validný!"}︡{"stdout":"\nCage(12,5): Kód je validný!"}︡{"stdout":"\nCage(13,5): Kód je validný!"}︡{"stdout":"\n"}︡{"done":true}
-
-
-
-
 
 
 

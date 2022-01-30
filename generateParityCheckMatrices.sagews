@@ -1,4 +1,3 @@
-︠b2e00e31-d3a7-469b-bfcc-1257017a5e28r︠
 import random
 import datetime
 
@@ -157,10 +156,6 @@ def cageVerification(cage,k,g):
     return True;
 
 main()
-︡232639b6-1509-4d41-b97f-0f543a068727︡{"stdout":"Súbor H_Cage(3,5) ból úspešne vytvorený! Doba trvania: 0.404025s!\n"}︡{"stdout":"\nSúbor H_Cage(6,4) ból úspešne vytvorený! Doba trvania: 0.119815s!\n"}︡{"stdout":"\nSúbor H_Cage(3,6) ból úspešne vytvorený! Doba trvania: 0.005411s!\n\nSúbor H_Cage(4,5) ból úspešne vytvorený! Doba trvania: 4.387481s!\n"}︡{"stdout":"\nSúbor H_Cage(3,7) ból úspešne vytvorený! Doba trvania: 0.00731s!\n\nSúbor H_Cage(3,8) ból úspešne vytvorený! Doba trvania: 0.084694s!\n\nSúbor H_Cage(7,5) ból úspešne vytvorený! Doba trvania: 0.393734s!\n"}︡{"stdout":"\nSúbor H_Cage(4,7) ból úspešne vytvorený! Doba trvania: 0.215183s!\n"}︡{"stdout":"\nSúbor H_Cage(3,10) ból úspešne vytvorený! Doba trvania: 0.103195s!\n"}︡{"stdout":"\nSúbor H_Cage(3,11) ból úspešne vytvorený! Doba trvania: 0.300632s!\n"}︡{"stdout":"\nSúbor H_Cage(10,5) ból úspešne vytvorený! Doba trvania: 1.885721s!\n"}︡{"stdout":"\nSúbor H_Cage(11,5) ból úspešne vytvorený! Doba trvania: 3.107229s!\n"}︡{"stdout":"\nSúbor H_Cage(12,5) ból úspešne vytvorený! Doba trvania: 6.28572s!\n"}︡{"stdout":"\nSúbor H_Cage(4,9) ból úspešne vytvorený! Doba trvania: 2.815235s!\n"}︡{"stdout":"\nSúbor H_Cage(13,5) ból úspešne vytvorený! Doba trvania: 8.292532s!\n"}︡{"stdout":"\nSúbor H_Cage(4,10) ból úspešne vytvorený! Doba trvania: 6.115313s!\n"}︡{"stdout":"\nSúbor H_Cage(3,14) ból úspešne vytvorený! Doba trvania: 6.781635s!\n"}︡{"stdout":"\nSúbor H_Cage(7,7) ból úspešne vytvorený! Doba trvania: 30.691218s!\n"}︡{"stdout":"\nSúbor H_Cage(3,16) ból úspešne vytvorený! Doba trvania: 29.904034s!\n"}︡{"stdout":"\nSúbor H_Cage(7,8) ból úspešne vytvorený! Doba trvania: 31.619011s!\n"}
-
-
-
 
 
 
