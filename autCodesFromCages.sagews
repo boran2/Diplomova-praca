@@ -1,4 +1,4 @@
-import random
+︠import random
 
 def main():
 # ***************vstupne data*****************
@@ -120,15 +120,6 @@ def generate_6_4CageGraph():
     graph.name("Cage (6,4)");
     return graph;
 
-# ziska vsetky cykly prechadzajúce vrcholom 0
-def getCycles(graph):
-    listOfGirths = [];
-    listsOfGirthVertices = graph.minimum_cycle_basis(by_weight=False);
-    for listOfGirthVertices in listsOfGirthVertices:
-        cycleGraph = graph.subgraph(listOfGirthVertices);
-        listOfGirths.append(cycleGraph.cycle_basis());
-    return listOfGirths;
-
 # vrati kontrolnu maticu linearneho kodu ako incidencnu maticu klietky ziskanu z grafu nad polom Z2
 def getParityCheckMatrix(graph):
     return matrix(GF(2), graph.incidence_matrix());
@@ -141,31 +132,9 @@ def getGeneratorMatrix(H):
 
 # realne data na zaklade vypooctov z klietky
 def getAndshowCageInformations(graph,g):
-    cycles = [];
     graph.show(figsize=10);
-    print(graph.vertices(sort=False));
-    cycles = getCycles(graph);
-    ver = len(graph.vertices());
-    edg = len(graph.edges(labels=False));
     autGroup = len(graph.automorphism_group())
     permutations = getPermutationsOfAutomorphisms(graph)
-    R = getRate(ver, edg);
-    H = getParityCheckMatrix(graph);
-    C = codes.from_parity_check_matrix(H)
-    G = getGeneratorMatrix(H)
-    n = G.ncols();
-    m = getMaxNumberOfCodewords(G)
-    d = C.minimum_distance();
-    p = perfectCodeParameter(n,m,d)
-    Gr = C.permutation_automorphism_group(algorithm = "partition");
-    autGroupC = Gr.order()
-    print(' \n')
-    print('Cykly formujúce klietku: ' + str(cycles) + ' \n');
-    print(' \n')
-    print('Počet vrcholov klietky ver = ' + str(ver) + ' \n');
-    # print(graph.vertices());
-    print('Počet hran klietky edg = ' + str(edg) + ' \n');
-    # print(graph.edges(labels=False));
     print('************************************************************************************************************************************************************************\n');
     print('Grupy automorfizmov: ');
     print('Počet automorfizmov z klietky autGroup = ' + str(autGroup) + ' \n');
@@ -179,6 +148,7 @@ def getAndshowCageInformations(graph,g):
         if Gnew not in Gchecker:
             Gchecker.append(Gnew);
         print(str(i+1) +'. Automorfizmus ' + str(permutations[i]) + ' \n');
+        graph.show(figsize=10);
         print('Kontrolna matica H:  \n' + str(Hnew) + ' \n');
         print('Generujúca matica lineárneho kódu G: \n' + str(Gnew) + ' \n');
     if len(Gchecker) == 1:
@@ -187,60 +157,6 @@ def getAndshowCageInformations(graph,g):
         print(Gchecker);
         print('\n');
     print('************************************************************************************************************************************************************************\n');
-    print('Incidencna matica klietky, Kontrolna matica H:  \n' + str(H) + ' \n');
-    print('Informačný pomer R = ' + str(R) + ' \n');
-    print('Lineárny kód C = ' + str(C) + ' \n');
-    print('Generujúca matica lineárneho kódu G: \n' + str(G) + ' \n');
-    print('Maximalny pocet slov zakodovanych v kode m = ' + str(m) + ' \n');
-    print('Parameter perfektneho kodu p(n,m,d) = ' + str(p) + ' \n');
-    print('Minimálna vzdialenost v kóde d = ' + str(d) + ' \n');
-    print('Overenie ci je Lineárny kód validný: '+ str(isLinearCodeValid(G,H)) + ' \n');
-#     print('Generatory grup automorfizmov: ');
-#     print(C.automorphism_group_gens(equivalence="permutational"))
-#     print(' \n')
-    print('počet automorfizmov z lineárneho kódu AutGroup(C) = ' + str(autGroupC) + ' \n');
-
-# zisti pocet kodovych slov z generujucej matice G
-def getMaxNumberOfCodewords(G):
-    return 2^G.nrows();
-
-# udava vzdialenost nasho kodu od perfektneho v intervale 0 - 1, kedy 1 je perfektny kod
-def perfectCodeParameter(n,M,d):
-    if d % 2 == 1:
-        t = (d-1)/2;     # t=(d-1)/2 pre neparne
-    else:
-        t = (d-2)/2;     # parne (d-1)/2 dostavam desatinne cislo, uvazujem len cele, preto d-2
-    sum = 0.0;
-    for i in range(0,t+1):
-        sum = sum + combinationNumber(n,i);
-    parameter = (M*sum)/(2^n)
-    return parameter;
-
-# vypocet faktorialu
-def factorial(n):
-    fact = 1;
-    for i in range(1,n+1):
-        fact = fact * i
-    return fact;
-
-# vypocet kombinacneho cisla
-def combinationNumber(n,k):
-    return factorial(n)/(factorial(k)*factorial(n-k));
-
-# vypocita informacny pomer z matice H
-def getRate(nRows, nCols):
-    return (nCols - nRows) / nCols;
-
-# testovacie dáta pre porovnanie na základe Moorovho ohraničenia pre potencionálnu klietku
-def testingcontrollDataForPotentionalCage(k,g):
-    M = calculateMooreBound(k,g);
-    minRozmerMaticeH = codeSizeByMooreBound(M,k);
-    matrixGirth = 2*g;
-    minPocetHran = numberOfEdgesByMooreBound(M,k);
-    print('Moorové ohraničenie potencionálnej klietky - pocet vrcholov: M('+str(k)+','+str(g)+') = '+str(M));
-    print('Minimalny rozmer matice H = ', minRozmerMaticeH);
-    print('Obvod cyklu v incidencnej matici = ', matrixGirth);
-    print('Minimalny pocet hran = ', minPocetHran);
 
 # odstranenie hodnot zo zoznamu na zaklade hodnoty
 def remove_values_from_list(the_list, val):
@@ -273,21 +189,4 @@ def cageVerification(cage,k,g):
         return False;
     return True;
 
-# ak je sucet vsetkych elementov matice sucinu G a Ht rovny 0 a sucasne plati ze ma tato matica rovnaky pocet riadkov ako G a rovnaky pocet stlpcov ako H^t potom je kod validny
-def isLinearCodeValid(G,H):
-    Ht = H.transpose();
-    validationMatrix = G * Ht;
-    elementsSum = sum(sum(validationMatrix));
-    if len(G.column(0)) == len(validationMatrix.column(0)) and len(Ht.row(0)) == len(validationMatrix.row(0)) and elementsSum == 0:
-        return True;
-    else:
-        return False;
-
 main()
-
-
-
-
-
-
-
