@@ -1,9 +1,12 @@
+︠ddd6b450-df28-4d6a-94d1-600a82bd533ar︠
 import random
 import glob
 import os
 
 # zoradi textove subory generujucich matic podla velkosti, nacita ich a zobrazi data
 def main():
+    if not os.path.exists('GeneratorMatrices'):
+            os.makedirs('GeneratorMatrices')
     filepaths = glob.glob('GeneratorMatrices/*.txt');
     sortedfilepaths = sortParityCheckFilesBySize(filepaths);
     for i in range(len(sortedfilepaths) - 1):
@@ -50,6 +53,7 @@ def sortParityCheckFilesBySize(filepaths):
     filepaths = sorted( filepaths, key =  lambda x: os.stat(x).st_size);
     return filepaths;
 main()
+︡b0962a1e-33c5-4cc8-90dd-557be1da6ca6︡{"stdout":"Cage(3,5):\nPočet automorfizmov AutGroup(C) = 120"}︡{"stdout":"\n\n\nCage(3,6):\nPočet automorfizmov AutGroup(C) = 336\n\n\nCage(3,7):\nPočet automorfizmov AutGroup(C) = 32"}︡{"stdout":"\n\n\nCage(3,8):\nPočet automorfizmov AutGroup(C) = 1440"}︡{"stdout":"\n\n\nCage(4,5):\nPočet automorfizmov AutGroup(C) = 24"}︡{"stdout":"\n\n\nCage(6,4):\nPočet automorfizmov AutGroup(C) = 1036800"}
 
 
 

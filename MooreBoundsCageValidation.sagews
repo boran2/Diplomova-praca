@@ -1,3 +1,4 @@
+︠6a13f954-0995-476d-a384-8161a3d8d2e5s︠
 # vypocet Moorovho ohranicenia pre uvazovanu klietku
 def calculateMooreBound(k,g):
     M = 0;
@@ -5,7 +6,6 @@ def calculateMooreBound(k,g):
         exp = (g - 3) / 2;
         for i in range(Integer(exp) + 1):
             M = M + (k * ((k - 1) ^ i));
-            print(M);
         M = M + 1;
     else:
         exp = (g - 2)/2;
@@ -40,6 +40,10 @@ print("M(10,5) = "+ str(calculateMooreBound(10,5)));
 print("M(11,5) = "+ str(calculateMooreBound(11,5)));
 print("M(12,5) = "+ str(calculateMooreBound(12,5)));
 print("M(13,5) = "+ str(calculateMooreBound(13,5)));
+︡1c1c45db-8bdc-4930-abcd-5555698e30be︡{"stdout":"M(3,5) = 10\n"}︡{"stdout":"M(3,6) = 14\n"}︡{"stdout":"M(3,7) = 22\n"}︡{"stdout":"M(3,8) = 30\n"}︡{"stdout":"M(3,10) = 62\n"}︡{"stdout":"M(3,11) = 94\n"}︡{"stdout":"M(3,14) = 254\n"}︡{"stdout":"M(3,16) = 510\n"}︡{"stdout":"M(3,17) = 766\n"}︡{"stdout":"M(3,18) = 1022\n"}︡{"stdout":"M(3,20) = 2046\n"}︡{"stdout":"M(3,23) = 6142\n"}︡{"stdout":"M(3,25) = 12286\n"}︡{"stdout":"M(4,5) = 17\n"}︡{"stdout":"M(4,7) = 53\n"}︡{"stdout":"M(4,9) = 161\n"}︡{"stdout":"M(4,10) = 242\n"}︡{"stdout":"M(5,10) = 682\n"}︡{"stdout":"M(6,4) = 12\n"}︡{"stdout":"M(7,5) = 50\n"}︡{"stdout":"M(7,7) = 302\n"}︡{"stdout":"M(7,8) = 518\n"}︡{"stdout":"M(10,5) = 101\n"}︡{"stdout":"M(11,5) = 122\n"}︡{"stdout":"M(12,5) = 145\n"}︡{"stdout":"M(13,5) = 170\n"}︡{"done":true}
+
+
+
 
 
 
