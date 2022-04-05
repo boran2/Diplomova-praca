@@ -1,9 +1,12 @@
+︠613d8bf1-5916-43eb-af61-1da2fc058b87s︠
 import random
 import glob
 import os
 
 # zoradi textove subory generujucich matic podla velkosti, nacita ich a zobrazi data
 def main():
+    if not os.path.exists('GeneratorMatrices'):
+        os.makedirs('GeneratorMatrices')
     filepaths = glob.glob('GeneratorMatrices/*.txt');
     sortedfilepaths = sortParityCheckFilesBySize(filepaths);
     for i in range(len(sortedfilepaths) - 1):
@@ -79,6 +82,7 @@ def sortParityCheckFilesBySize(filepaths):
     filepaths = sorted( filepaths, key =  lambda x: os.stat(x).st_size);
     return filepaths;
 main()
+︡6c78f927-632d-4112-9240-b947ba13562a︡{"done":true}
 
 
 

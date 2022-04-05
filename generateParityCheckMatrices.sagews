@@ -1,5 +1,7 @@
+︠e2f50c5c-1207-4fa0-9e24-3f2d6dd09a59r︠
 import random
 import datetime
+import os
 
 # ***************vstupne data*****************
 sageCages = [[3,5], [3,6], [3,7], [3,8], [3,10], [3,11], [4,5], [7,5]];
@@ -13,6 +15,8 @@ def main():
     for cage in cages:
         k = cage[0];
         g = cage[1];
+        if not os.path.exists('ParityCheckMatrices'):
+            os.makedirs('ParityCheckMatrices')
         startTime = datetime.datetime.now();
         H = getParityCheckMatrixFromCage(k,g);
         file = open('ParityCheckMatrices/H_cage_'+str(k)+'_'+str(g)+'.txt', 'w');
@@ -78,7 +82,15 @@ def getParityCheckMatrixFromCage(k,g):
     if (cageVerification(cage,k,g) == False):
         print('Klietka Cage(' +str(k) +','+str(g) +') neexistuje\n');
         return;
-    return getParityCheckMatrix(cage);
+    return getParityCheckMatrix(setNonZeroVerticesLabels(cage));
+
+# nastavi vrcholy od 1 po pocet vrcholov pre danu klietku
+def setNonZeroVerticesLabels(cage):
+    vertices = []
+    for vertex in range(len(cage.vertices(sort=False))):
+        vertices.append(vertex + 1)
+    cage.relabel(vertices)
+    return cage
 
 # vypocita najmensi mozny pocet vrcholov pre potencionalnu klietku (testovacie data)
 def calculateMooreBound(k,g):
@@ -156,6 +168,10 @@ def cageVerification(cage,k,g):
     return True;
 
 main()
+︡19d6fd02-2ae4-4b2a-834a-875d73e4dc1e︡{"stdout":"Súbor H_Cage(3,5) ból úspešne vytvorený! Doba trvania: 0.173094s\n"}︡{"stdout":"\nSúbor H_Cage(6,4) ból úspešne vytvorený! Doba trvania: 0.048223s\n\nSúbor H_Cage(3,6) ból úspešne vytvorený! Doba trvania: 0.029507s\n\nSúbor H_Cage(4,5) ból úspešne vytvorený! Doba trvania: 0.647323s\n"}︡{"stdout":"\nSúbor H_Cage(3,7) ból úspešne vytvorený! Doba trvania: 0.004768s\n\nSúbor H_Cage(3,8) ból úspešne vytvorený! Doba trvania: 0.005858s\n\nSúbor H_Cage(7,5) ból úspešne vytvorený! Doba trvania: 0.064025s\n\nSúbor H_Cage(4,7) ból úspešne vytvorený! Doba trvania: 0.085594s\n"}︡{"stdout":"\nSúbor H_Cage(3,10) ból úspešne vytvorený! Doba trvania: 0.095125s\n\nSúbor H_Cage(3,11) ból úspešne vytvorený! Doba trvania: 0.395805s\n"}︡{"stdout":"\nSúbor H_Cage(10,5) ból úspešne vytvorený! Doba trvania: 0.607259s\n"}︡{"stdout":"\nSúbor H_Cage(11,5) ból úspešne vytvorený! Doba trvania: 1.413879s\n"}︡{"stdout":"\nSúbor H_Cage(12,5) ból úspešne vytvorený! Doba trvania: 2.57755s\n"}︡{"stdout":"\nSúbor H_Cage(4,9) ból úspešne vytvorený! Doba trvania: 1.329654s\n"}︡{"stdout":"\nSúbor H_Cage(13,5) ból úspešne vytvorený! Doba trvania: 3.395093s\n"}︡{"stdout":"\nSúbor H_Cage(4,10) ból úspešne vytvorený! Doba trvania: 2.899623s\n"}︡{"stdout":"\nSúbor H_Cage(3,14) ból úspešne vytvorený! Doba trvania: 2.289851s\n"}︡{"stdout":"\nSúbor H_Cage(7,7) ból úspešne vytvorený! Doba trvania: 14.513347s\n"}︡{"stdout":"\nSúbor H_Cage(3,16) ból úspešne vytvorený! Doba trvania: 12.701965s\n"}︡{"stdout":"\nSúbor H_Cage(7,8) ból úspešne vytvorený! Doba trvania: 14.70291s\n"}︡{"stdout":"\nSúbor H_Cage(5,10) ból úspešne vytvorený! Doba trvania: 40.795914s\n"}
+
+
+
 
 
 
